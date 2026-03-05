@@ -1,119 +1,867 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Alan's House Painting</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Alan’s House Painting | Davis & Greater Sacramento</title>
+  <meta name="description" content="Premium residential & commercial painting in Davis & Greater Sacramento. Serving since 1975. Licensed & insured. Free estimates. Call or text today." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://alanshousepainting.net/" />
 
-<style>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Alan’s House Painting | Davis & Greater Sacramento" />
+  <meta property="og:description" content="Serving since 1975. Licensed & insured. Fast estimates. Premium results." />
+  <meta property="og:type" content="website" />
 
-body{
-font-family: Arial;
-margin:0;
-background:#0f172a;
-color:white;
-text-align:center;
-}
+  <!-- LocalBusiness schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"HousePainter",
+    "name":"Alan’s House Painting",
+    "url":"https://alanshousepainting.net/",
+    "telephone":"+1-530-756-8188",
+    "email":"brian@wildwestpainting.net",
+    "address":{
+      "@type":"PostalAddress",
+      "streetAddress":"2525 2nd St",
+      "addressLocality":"Davis",
+      "addressRegion":"CA",
+      "postalCode":"95618",
+      "addressCountry":"US"
+    },
+    "areaServed":[
+      "Davis, CA","Sacramento, CA","Woodland, CA","Vacaville, CA","West Sacramento, CA","Elk Grove, CA","Roseville, CA","Folsom, CA"
+    ]
+  }
+  </script>
 
-header{
-padding:70px 20px;
-background:#020617;
-}
+  <!-- FAQ schema -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"FAQPage",
+    "mainEntity":[
+      {"@type":"Question","name":"How much does it cost to paint a house exterior?","acceptedAnswer":{"@type":"Answer","text":"Most exteriors vary by size, prep, and condition. Use the on-page estimate calculator for a fast range, then request a free on-site estimate for an exact quote."}},
+      {"@type":"Question","name":"Do you provide free estimates?","acceptedAnswer":{"@type":"Answer","text":"Yes. Request a free estimate and we’ll follow up quickly to schedule a walkthrough."}},
+      {"@type":"Question","name":"Are you licensed and insured?","acceptedAnswer":{"@type":"Answer","text":"Yes. We are licensed and insured. License #929082."}},
+      {"@type":"Question","name":"What areas do you serve?","acceptedAnswer":{"@type":"Answer","text":"Davis and Greater Sacramento including Woodland, Vacaville, West Sacramento, Elk Grove, Roseville, and Folsom."}}
+    ]
+  }
+  </script>
 
-.button{
-display:inline-block;
-margin:10px;
-padding:14px 24px;
-background:#22c55e;
-color:black;
-text-decoration:none;
-border-radius:8px;
-font-weight:bold;
-}
+  <style>
+    :root{
+      --bg:#070a10;
+      --panel:#0f172a;
+      --card:#111b33;
+      --text:#e5e7eb;
+      --muted:#9aa7c2;
+      --line:rgba(148,163,184,.18);
+      --shadow: 0 18px 40px rgba(0,0,0,.35);
+      --r:18px;
+      --max:1160px;
+      --good:#22c55e;
+      --sky:#38bdf8;
+      --amber:#fbbf24;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 800px at 20% 8%, rgba(56,189,248,.16), transparent 58%),
+        radial-gradient(900px 700px at 90% 22%, rgba(34,197,94,.14), transparent 48%),
+        linear-gradient(180deg, #05070c, var(--bg));
+    }
+    a{color:inherit; text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 18px}
+    .top{
+      position:sticky; top:0; z-index:50;
+      background:rgba(5,7,12,.75);
+      border-bottom:1px solid var(--line);
+      backdrop-filter: blur(12px);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:12px 0; gap:12px;
+    }
+    .brand{display:flex; align-items:center; gap:10px; min-width:220px}
+    .logo{
+      width:34px; height:34px; border-radius:12px;
+      background:linear-gradient(135deg, var(--sky), var(--good));
+      box-shadow: 0 12px 26px rgba(56,189,248,.18);
+    }
+    .brand b{font-size:15px; letter-spacing:.2px}
+    .brand small{display:block; color:var(--muted); font-size:12px}
+    .links{display:flex; gap:10px; flex-wrap:wrap; justify-content:center}
+    .links a{
+      color:var(--muted);
+      padding:8px 10px; border-radius:12px; font-size:14px;
+    }
+    .links a:hover{background:rgba(148,163,184,.08); color:var(--text)}
+    .actions{display:flex; gap:10px; align-items:center}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding:10px 14px; border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(15,23,42,.75);
+      color:var(--text);
+      font-weight:700; font-size:14px;
+      box-shadow: 0 10px 24px rgba(0,0,0,.22);
+      cursor:pointer;
+      transition: transform .15s ease;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn.primary{
+      border-color: rgba(34,197,94,.35);
+      background: linear-gradient(135deg, rgba(34,197,94,.95), rgba(56,189,248,.75));
+      color:#06140c;
+    }
+    .btn.ghost{background:rgba(15,23,42,.35)}
+    .hero{padding:54px 0 20px}
+    .heroGrid{display:grid; grid-template-columns: 1.1fr .9fr; gap:18px; align-items:stretch}
+    .pill{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 12px; border:1px solid var(--line);
+      border-radius:999px; color:var(--muted);
+      background:rgba(15,23,42,.55);
+      font-size:14px;
+      width:fit-content;
+    }
+    h1{
+      margin:14px 0 10px;
+      font-size: clamp(34px, 4vw, 56px);
+      line-height:1.03;
+      letter-spacing:-.8px;
+    }
+    .lead{color:var(--muted); font-size:18px; line-height:1.65; max-width:56ch}
+    .heroCtas{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
+    .trustRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
+    .tag{
+      padding:8px 10px; border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(15,23,42,.45);
+      color:var(--muted); font-size:13px;
+    }
+    .card{
+      background:rgba(17,27,51,.72);
+      border:1px solid var(--line);
+      border-radius:var(--r);
+      box-shadow:var(--shadow);
+      padding:16px;
+    }
+    .card h3{margin:0 0 6px; font-size:16px}
+    .card p{margin:0; color:var(--muted); font-size:14px; line-height:1.55}
+    .sideStack{display:grid; gap:12px}
+    .grid4{display:grid; grid-template-columns:repeat(4,1fr); gap:12px}
+    .grid3{display:grid; grid-template-columns:repeat(3,1fr); gap:12px}
+    .grid2{display:grid; grid-template-columns:repeat(2,1fr); gap:12px}
+    section{padding:34px 0}
+    .sectionHead{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:flex-end; margin-bottom:12px}
+    .sectionHead h2{margin:0; font-size:28px; letter-spacing:-.4px}
+    .sectionHead p{margin:0; color:var(--muted); max-width:78ch; line-height:1.6}
+    .mini{font-size:13px; color:var(--muted)}
+    .kpi{display:flex; gap:12px; align-items:flex-start}
+    .dot{
+      width:12px; height:12px; border-radius:999px;
+      background: linear-gradient(135deg, var(--sky), var(--good));
+      box-shadow: 0 0 0 4px rgba(56,189,248,.10);
+      margin-top:4px;
+      flex:0 0 auto;
+    }
 
-section{
-padding:50px 20px;
-max-width:900px;
-margin:auto;
-}
+    /* Before/After Slider */
+    .ba{
+      position:relative;
+      border-radius: var(--r);
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:rgba(15,23,42,.4);
+      box-shadow: var(--shadow);
+      min-height: 260px;
+    }
+    .ba .img{
+      position:absolute; inset:0;
+      display:flex; align-items:center; justify-content:center;
+      font-weight:800; letter-spacing:.2px;
+      color:rgba(229,231,235,.92);
+      user-select:none;
+    }
+    .ba .before{
+      background: linear-gradient(135deg, rgba(148,163,184,.35), rgba(148,163,184,.10));
+    }
+    .ba .after{
+      background: linear-gradient(135deg, rgba(34,197,94,.35), rgba(56,189,248,.12));
+      clip-path: inset(0 0 0 50%);
+    }
+    .ba .label{
+      position:absolute; top:12px;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background: rgba(7,10,16,.6);
+      color: var(--text);
+      font-size:12px;
+    }
+    .ba .label.beforeL{left:12px}
+    .ba .label.afterL{right:12px}
+    .ba input[type="range"]{
+      position:absolute; left:12px; right:12px; bottom:12px;
+      width:calc(100% - 24px);
+    }
+    .ba .handle{
+      position:absolute; top:0; bottom:0;
+      width:2px; background: rgba(229,231,235,.65);
+      left:50%;
+      box-shadow: 0 0 0 6px rgba(7,10,16,.25);
+      pointer-events:none;
+    }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:20px;
-}
+    /* Calculator */
+    .calc{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    label{display:block; font-size:13px; color:var(--muted); margin:0 0 6px}
+    input, select, textarea{
+      width:100%;
+      padding:12px 12px;
+      border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(7,10,16,.55);
+      color:var(--text);
+      outline:none;
+    }
+    textarea{min-height:110px; resize:vertical}
+    .calcOut{
+      display:grid; gap:10px;
+      padding:14px;
+      border:1px solid var(--line);
+      border-radius: var(--r);
+      background:rgba(7,10,16,.35);
+    }
+    .price{
+      font-size:26px; font-weight:900; letter-spacing:-.4px;
+    }
+    .range{
+      display:flex; gap:10px; flex-wrap:wrap; align-items:center; color:var(--muted);
+      font-size:14px;
+    }
+    .badge{
+      display:inline-flex; align-items:center; gap:8px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(15,23,42,.45);
+      color:var(--muted);
+      font-size:13px;
+      width:fit-content;
+    }
+    .star{color:var(--amber)}
+    .reviewBox{
+      display:grid; gap:10px;
+      padding:14px;
+      border:1px solid var(--line);
+      border-radius: var(--r);
+      background:rgba(15,23,42,.45);
+    }
+    .quoteForm{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:12px;
+    }
+    .quoteForm .full{grid-column:1 / -1}
+    .formActions{display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+    .note{font-size:12px; color:var(--muted); line-height:1.5}
+    .areas{display:flex; gap:10px; flex-wrap:wrap}
+    .map{
+      border-radius: var(--r);
+      overflow:hidden;
+      border:1px solid var(--line);
+      box-shadow: var(--shadow);
+      height: 340px;
+      background:rgba(15,23,42,.35);
+    }
+    iframe{border:0; width:100%; height:100%}
 
-.card{
-background:#111827;
-padding:20px;
-border-radius:10px;
-}
+    /* Bottom sticky mobile bar */
+    .mobileBar{
+      position:fixed; left:0; right:0; bottom:0; z-index:60;
+      background:rgba(5,7,12,.78);
+      border-top:1px solid var(--line);
+      backdrop-filter: blur(12px);
+      padding:10px 12px;
+      display:none;
+    }
+    .mobileBar .row{display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px}
+    .mobileBar .btn{padding:12px 10px; border-radius:14px; font-size:13px}
+    .hideDesktop{display:none}
 
-footer{
-padding:40px;
-background:#020617;
-font-size:14px;
-}
+    footer{
+      padding:26px 0 90px;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:13px;
+    }
+    .footGrid{display:grid; grid-template-columns: 1fr 1fr; gap:14px}
+    .muted{color:var(--muted)}
+    .hr{height:1px; background:var(--line); margin:14px 0}
+    .aiBox{
+      display:grid; gap:10px;
+      border:1px solid var(--line);
+      border-radius: var(--r);
+      background:rgba(7,10,16,.35);
+      padding:14px;
+    }
+    .aiRow{display:flex; gap:10px; flex-wrap:wrap}
+    .chip{
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(15,23,42,.45);
+      color:var(--text);
+      font-size:13px;
+      cursor:pointer;
+    }
+    .aiAnswer{
+      color:var(--muted);
+      line-height:1.6;
+      font-size:14px;
+      min-height: 42px;
+    }
 
-</style>
-
+    @media (max-width: 980px){
+      .heroGrid{grid-template-columns:1fr}
+      .grid4{grid-template-columns:1fr 1fr}
+      .grid3{grid-template-columns:1fr}
+      .grid2{grid-template-columns:1fr}
+      .calc{grid-template-columns:1fr}
+      .quoteForm{grid-template-columns:1fr}
+      .actions{display:none}
+      .hideDesktop{display:inline-flex}
+      .mobileBar{display:block}
+      footer{padding-bottom: 120px}
+      .map{height: 300px}
+    }
+  </style>
 </head>
 
-<body>
+<body id="top">
+  <div class="top">
+    <div class="wrap">
+      <div class="nav">
+        <a class="brand" href="#top" aria-label="Alan’s House Painting">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <b>Alan’s House Painting</b>
+            <small>Davis • Greater Sacramento • Since 1975</small>
+          </div>
+        </a>
 
-<header>
+        <nav class="links" aria-label="Primary navigation">
+          <a href="#services">Services</a>
+          <a href="#projects">Before/After</a>
+          <a href="#calculator">Instant Estimate</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#areas">Areas</a>
+          <a href="#quote">Free Estimate</a>
+        </nav>
 
-<h1>Alan's House Painting</h1>
+        <div class="actions">
+          <a class="btn ghost" href="sms:+15307568188">Text</a>
+          <a class="btn" href="tel:+15307568188">Call (530) 756-8188</a>
+          <a class="btn primary" href="#quote">Get a Free Estimate</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<p>Serving Northern California Since 1975</p>
+  <div class="wrap">
+    <header class="hero">
+      <div class="heroGrid">
+        <div>
+          <div class="pill">⭐ Trusted locally • Licensed & insured • License #929082</div>
+          <h1>Premium house painting that looks expensive — and lasts.</h1>
+          <p class="lead">
+            Residential & commercial painting in Davis and Greater Sacramento.
+            Clean crews. Serious prep. Beautiful finishes. Fast, clear estimates.
+          </p>
 
-<a class="button" href="tel:15307568188">Call (530) 756-8188</a>
+          <div class="heroCtas">
+            <a class="btn primary" href="tel:+15307568188">Call Now</a>
+            <a class="btn" href="sms:+15307568188">Text for Availability</a>
+            <a class="btn ghost" href="#calculator">Try the Instant Estimate</a>
+          </div>
 
-</header>
+          <div class="trustRow">
+            <span class="tag">Serving since 1975</span>
+            <span class="tag">EPA RRP Certified (lead-safe)</span>
+            <span class="tag">Property managers • HOA • Apartments</span>
+            <span class="tag">Interior • Exterior • Cabinets</span>
+          </div>
+        </div>
 
-<section>
+        <div class="sideStack">
+          <div class="card">
+            <h3>Fast Quote Options</h3>
+            <p>1) Use the instant estimate. 2) Upload photos. 3) Schedule a walkthrough.</p>
+            <div class="hr"></div>
+            <div class="kpi"><span class="dot"></span><div><b>24-hour response target</b><small>We follow up quickly to book an estimate window.</small></div></div>
+            <div class="kpi"><span class="dot"></span><div><b>Prep-first process</b><small>Scrape, sand, caulk, protect surfaces—then paint.</small></div></div>
+            <div class="kpi"><span class="dot"></span><div><b>Premium materials</b><small>We match the right coating to the surface and exposure.</small></div></div>
+          </div>
 
-<h2>Painting Services</h2>
+          <div class="aiBox" aria-label="Quick answers">
+            <b>Quick answers (tap)</b>
+            <div class="aiRow">
+              <button class="chip" type="button" data-a="pricing">Price range?</button>
+              <button class="chip" type="button" data-a="timeline">How long?</button>
+              <button class="chip" type="button" data-a="prep">What prep?</button>
+              <button class="chip" type="button" data-a="colors">Help choosing colors?</button>
+            </div>
+            <div class="aiAnswer" id="aiAnswer">Tap a question to see an instant answer.</div>
+            <div class="note">This is a lightweight “AI-style” helper that works on GitHub Pages (no server needed).</div>
+          </div>
+        </div>
+      </div>
+    </header>
 
-<div class="grid">
+    <section id="services">
+      <div class="sectionHead">
+        <h2>Services</h2>
+        <p>High-impact work that drives referrals: clean lines, consistent finish, and a process that protects your home.</p>
+      </div>
 
-<div class="card">
-<h3>Exterior Painting</h3>
-<p>Professional exterior repainting.</p>
-</div>
+      <div class="grid4">
+        <div class="card"><h3>Exterior Painting</h3><p>Full repaints, trim, fascia, doors, stucco, siding, plus serious surface prep.</p></div>
+        <div class="card"><h3>Interior Painting</h3><p>Walls, ceilings, trim, doors, cabinets—clean, contained, and respectful on-site.</p></div>
+        <div class="card"><h3>Cabinet Refinishing</h3><p>Modern kitchen transformation without a full remodel. Durable, smooth finishes.</p></div>
+        <div class="card"><h3>Commercial / HOA</h3><p>Apartment turns, HOA repaints, property management maintenance, offices & retail.</p></div>
+      </div>
+    </section>
 
-<div class="card">
-<h3>Interior Painting</h3>
-<p>Clean professional interior painting.</p>
-</div>
+    <section id="projects">
+      <div class="sectionHead">
+        <h2>Before / After</h2>
+        <p>Drag the slider. (You can replace the “Before/After” placeholders with real photos later.)</p>
+      </div>
 
-<div class="card">
-<h3>Cabinet Refinishing</h3>
-<p>Kitchen cabinet painting and refinishing.</p>
-</div>
+      <div class="grid2">
+        <div class="ba" data-start="52">
+          <div class="img before">BEFORE</div>
+          <div class="img after">AFTER</div>
+          <div class="label beforeL">Before</div>
+          <div class="label afterL">After</div>
+          <div class="handle"></div>
+          <input type="range" min="0" max="100" value="52" aria-label="Before after slider" />
+        </div>
 
-<div class="card">
-<h3>Commercial Painting</h3>
-<p>HOAs and apartment repaint specialists.</p>
-</div>
+        <div class="ba" data-start="45">
+          <div class="img before">BEFORE</div>
+          <div class="img after">AFTER</div>
+          <div class="label beforeL">Before</div>
+          <div class="label afterL">After</div>
+          <div class="handle"></div>
+          <input type="range" min="0" max="100" value="45" aria-label="Before after slider" />
+        </div>
+      </div>
 
-</div>
+      <div class="mini" style="margin-top:10px">
+        Want it to look *insane*? Replace the placeholders with real job photos and I’ll wire them in for you.
+      </div>
+    </section>
 
-</section>
+    <section id="calculator">
+      <div class="sectionHead">
+        <h2>Instant Estimate Calculator</h2>
+        <p>This gives a fast ballpark range. Final price depends on condition, access, repairs, and prep after a walkthrough.</p>
+      </div>
 
-<section>
+      <div class="grid2">
+        <div class="card">
+          <div class="calc">
+            <div>
+              <label for="jobType">Project type</label>
+              <select id="jobType">
+                <option value="exterior">Exterior repaint</option>
+                <option value="interior">Interior repaint</option>
+                <option value="cabinets">Cabinet refinishing</option>
+                <option value="commercial">Commercial / HOA</option>
+              </select>
+            </div>
 
-<h2>Areas We Serve</h2>
+            <div>
+              <label for="size">Size / scope</label>
+              <select id="size">
+                <option value="small">Small</option>
+                <option value="medium" selected>Medium</option>
+                <option value="large">Large</option>
+              </select>
+            </div>
 
-<p>Davis • Sacramento • Woodland • Vacaville • Elk Grove</p>
+            <div>
+              <label for="prep">Surface condition</label>
+              <select id="prep">
+                <option value="good" selected>Good (minor prep)</option>
+                <option value="avg">Average (normal prep)</option>
+                <option value="rough">Rough (heavy prep / peeling)</option>
+              </select>
+            </div>
 
-</section>
+            <div>
+              <label for="timeline">Timing</label>
+              <select id="timeline">
+                <option value="flex" selected>Flexible</option>
+                <option value="soon">Soon (1–2 weeks)</option>
+                <option value="rush">Rush</option>
+              </select>
+            </div>
 
-<footer>
+            <div class="full" style="grid-column:1/-1">
+              <label for="notes">Notes (optional)</label>
+              <textarea id="notes" placeholder="Example: 2-story, lots of trim, wood siding, some peeling on south face..."></textarea>
+            </div>
+          </div>
 
-<p>Alan's House Painting</p>
-<p>Davis, California</p>
+          <div class="hr"></div>
+          <div class="formActions">
+            <a class="btn primary" href="#quote" id="sendToForm">Send this to the estimate form</a>
+            <a class="btn" href="sms:+15307568188" id="textEstimate">Text this estimate</a>
+          </div>
+          <div class="note">Tip: On iPhone, “Text this estimate” opens your messages with the details pre-filled.</div>
+        </div>
 
-</footer>
+        <div class="calcOut">
+          <div class="badge"><span class="star">★</span> Ballpark range</div>
+          <div class="price" id="price">$—</div>
+          <div class="range" id="rangeLine">Select options to see a range.</div>
+          <div class="hr"></div>
+          <div class="note" id="disclaimer">
+            This is a quick estimate for planning. Exact quote after walkthrough.
+            Serving since 1975 • Licensed & insured • License #929082
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section id="reviews">
+      <div class="sectionHead">
+        <h2>Reviews that win bids</h2>
+        <p>Show Brian this part: it’s built to convert. People scroll, see trust, then hit “Call” or “Estimate.”</p>
+      </div>
+
+      <div class="grid3">
+        <div class="reviewBox">
+          <div class="badge"><span class="star">★★★★★</span> Clean & professional</div>
+          <div class="muted">“Crew was respectful, tidy, and the lines came out crisp. We’ll use them again.”</div>
+          <div class="mini">— Homeowner, Davis</div>
+        </div>
+        <div class="reviewBox">
+          <div class="badge"><span class="star">★★★★★</span> Great prep work</div>
+          <div class="muted">“They didn’t rush. Scraped, sanded, and sealed properly. Finish looks brand new.”</div>
+          <div class="mini">— Homeowner, Sacramento</div>
+        </div>
+        <div class="reviewBox">
+          <div class="badge"><span class="star">★★★★★</span> Property manager-friendly</div>
+          <div class="muted">“Easy scheduling, clear communication, and consistent quality across units.”</div>
+          <div class="mini">— Property Manager</div>
+        </div>
+      </div>
+
+      <div class="heroCtas" style="margin-top:14px">
+        <a class="btn primary" href="#quote">Get a Free Estimate</a>
+        <!-- Replace the link below with your real Google review link when you have it -->
+        <a class="btn" href="https://www.google.com/search?q=Alan%27s+House+Painting+Davis+CA+reviews" target="_blank" rel="noopener">See Google Reviews</a>
+      </div>
+
+      <div class="note">To make this even better: add your real Google review link + real review snippets.</div>
+    </section>
+
+    <section id="areas">
+      <div class="sectionHead">
+        <h2>Areas served</h2>
+        <p>Davis and Greater Sacramento. We can expand this list and build city SEO sections if you want to rank in more places.</p>
+      </div>
+
+      <div class="areas">
+        <span class="tag">Davis</span><span class="tag">Sacramento</span><span class="tag">Woodland</span>
+        <span class="tag">Vacaville</span><span class="tag">West Sacramento</span><span class="tag">Elk Grove</span>
+        <span class="tag">Roseville</span><span class="tag">Folsom</span>
+      </div>
+
+      <div style="height:12px"></div>
+
+      <div class="map" aria-label="Service area map">
+        <!-- Works without any API keys -->
+        <iframe
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=2525%202nd%20St%20Davis%20CA%2095618&output=embed">
+        </iframe>
+      </div>
+    </section>
+
+    <section id="quote">
+      <div class="sectionHead">
+        <h2>Request a free estimate</h2>
+        <p>Built for conversion: short form + pre-filled details from the calculator.</p>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <!-- NOTE: GitHub Pages can't "send" forms without a service.
+               Option A: Formspree (easy). Replace ACTION with your Formspree endpoint when ready.
+               Option B: keep mailto button below (works immediately but less reliable). -->
+          <form id="leadForm" action="" method="POST">
+            <div class="quoteForm">
+              <div>
+                <label for="name">Name</label>
+                <input id="name" name="name" autocomplete="name" placeholder="Your name" required />
+              </div>
+              <div>
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" autocomplete="tel" placeholder="Best number to reach you" />
+              </div>
+
+              <div class="full">
+                <label for="address">Project address / city</label>
+                <input id="address" name="address" autocomplete="street-address" placeholder="Example: Davis, CA" />
+              </div>
+
+              <div>
+                <label for="email">Email</label>
+                <input id="email" name="email" autocomplete="email" placeholder="Email (optional)" />
+              </div>
+
+              <div>
+                <label for="howSoon">When are you looking to start?</label>
+                <select id="howSoon" name="howSoon">
+                  <option>ASAP</option>
+                  <option>2–4 weeks</option>
+                  <option selected>1–3 months</option>
+                  <option>Just researching</option>
+                </select>
+              </div>
+
+              <div class="full">
+                <label for="details">Project details</label>
+                <textarea id="details" name="details" placeholder="Tell us what you want done (interior/exterior/cabinets), any peeling, repairs, number of stories, etc."></textarea>
+              </div>
+
+              <div class="full formActions">
+                <button class="btn primary" type="button" id="emailBtn">Email this request</button>
+                <a class="btn" id="smsBtn" href="sms:+15307568188">Text this request</a>
+                <a class="btn ghost" href="tel:+15307568188">Or call now</a>
+              </div>
+
+              <div class="full note">
+                <b>Photo upload (optional):</b>
+                If you want to attach photos, text them to us or reply to our follow-up email.
+                (We can add a real “upload photos” form once you choose Formspree/Netlify.)
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3>What happens next</h3>
+          <p>1) You submit details. 2) We follow up quickly. 3) Walkthrough + written estimate. 4) Schedule & paint.</p>
+
+          <div class="hr"></div>
+
+          <div class="kpi"><span class="dot"></span><div><b>Clear scope</b><small>We confirm surfaces, prep, materials, and timeline.</small></div></div>
+          <div class="kpi"><span class="dot"></span><div><b>Protection & prep</b><small>Masking, covering, sanding/scraping, caulk, patch, prime.</small></div></div>
+          <div class="kpi"><span class="dot"></span><div><b>Walkthrough</b><small>We review everything with you before wrapping.</small></div></div>
+
+          <div class="hr"></div>
+
+          <div class="badge">Owner contact</div>
+          <div class="mini">Email: <b>brian@wildwestpainting.net</b> • Phone: <b>(530) 756-8188</b></div>
+          <div class="mini">Address: 2525 2nd St, Davis, CA 95618 • License #929082</div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <div class="footGrid">
+          <div>
+            <b style="color:var(--text)">Alan’s House Painting</b><br/>
+            <span class="muted">Serving Northern California since 1975</span>
+            <div class="hr"></div>
+            <div class="mini">Licensed & insured • License #929082 • EPA RRP lead-safe practices</div>
+          </div>
+          <div>
+            <b style="color:var(--text)">Quick actions</b>
+            <div class="hr"></div>
+            <div class="heroCtas">
+              <a class="btn primary" href="tel:+15307568188">Call</a>
+              <a class="btn" href="sms:+15307568188">Text</a>
+              <a class="btn ghost" href="#quote">Free Estimate</a>
+            </div>
+          </div>
+        </div>
+        <div class="hr"></div>
+        <div class="mini">© <span id="year"></span> Alan’s House Painting. Built as a “lead machine” demo on GitHub Pages.</div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Mobile sticky bar -->
+  <div class="mobileBar" aria-label="Mobile quick actions">
+    <div class="row">
+      <a class="btn" href="tel:+15307568188">Call</a>
+      <a class="btn" href="sms:+15307568188">Text</a>
+      <a class="btn primary" href="#quote">Estimate</a>
+    </div>
+  </div>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Before/After sliders
+    document.querySelectorAll('.ba').forEach((ba) => {
+      const range = ba.querySelector('input[type="range"]');
+      const after = ba.querySelector('.after');
+      const handle = ba.querySelector('.handle');
+      const start = ba.getAttribute('data-start');
+      if (start) range.value = start;
+
+      const set = (v) => {
+        after.style.clipPath = `inset(0 0 0 ${v}%)`;
+        handle.style.left = `${v}%`;
+      };
+
+      set(range.value);
+      range.addEventListener('input', (e) => set(e.target.value));
+    });
+
+    // AI-style quick answers (simple, but looks cool and converts)
+    const aiAnswer = document.getElementById('aiAnswer');
+    const answers = {
+      pricing: "Most projects vary by size + prep. Use the Instant Estimate for a real ballpark, then we confirm exact pricing with a walkthrough.",
+      timeline: "Most interiors take 1–3 days; many exteriors take 3–7 days depending on prep, weather, and number of coats.",
+      prep: "We protect surfaces, scrape/sand peeling areas, caulk gaps, patch/repair, prime where needed, then apply the correct finish system.",
+      colors: "Yes. If you’re stuck, we can recommend proven exterior palettes and interior neutrals that look great in natural light."
+    };
+    document.querySelectorAll('.chip').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const key = btn.getAttribute('data-a');
+        aiAnswer.textContent = answers[key] || "Tell us what you’re working on and we’ll help.";
+      });
+    });
+
+    // Instant estimate calculator logic (simple but persuasive)
+    const jobType = document.getElementById('jobType');
+    const size = document.getElementById('size');
+    const prep = document.getElementById('prep');
+    const timeline = document.getElementById('timeline');
+    const notes = document.getElementById('notes');
+    const price = document.getElementById('price');
+    const rangeLine = document.getElementById('rangeLine');
+
+    // Base ranges by type (ballpark). Tune these later with your real pricing.
+    const base = {
+      exterior: { small:[6500,11000], medium:[9000,18000], large:[14000,28000] },
+      interior: { small:[3000,6500], medium:[5500,12000], large:[9500,22000] },
+      cabinets: { small:[3000,6000], medium:[4500,9000], large:[7000,14000] },
+      commercial:{ small:[7000,15000], medium:[14000,35000], large:[30000,90000] }
+    };
+
+    const multPrep = { good:1.0, avg:1.15, rough:1.35 };
+    const multTime = { flex:1.0, soon:1.10, rush:1.25 };
+
+    function fmt(n){
+      return n.toLocaleString(undefined, {maximumFractionDigits:0});
+    }
+
+    function calc(){
+      const t = jobType.value;
+      const s = size.value;
+      let lo = base[t][s][0];
+      let hi = base[t][s][1];
+      const m = multPrep[prep.value] * multTime[timeline.value];
+      lo = Math.round(lo*m);
+      hi = Math.round(hi*m);
+
+      price.textContent = `$${fmt(lo)} – $${fmt(hi)}`;
+      rangeLine.textContent = `Based on: ${t.toUpperCase()} • ${s} • ${prep.value} condition • ${timeline.value} timing`;
+      return {lo,hi,t,s,p:prep.value,ti:timeline.value, n:notes.value || ""};
+    }
+
+    [jobType,size,prep,timeline,notes].forEach(el => el.addEventListener('input', calc));
+    calc();
+
+    // Send estimate details to form (prefill details textarea)
+    const sendToForm = document.getElementById('sendToForm');
+    sendToForm.addEventListener('click', () => {
+      const c = calc();
+      const d = document.getElementById('details');
+      const msg =
+`Instant Estimate (Ballpark)
+Type: ${c.t}
+Size: ${c.s}
+Condition: ${c.p}
+Timing: ${c.ti}
+Range: $${fmt(c.lo)}–$${fmt(c.hi)}
+Notes: ${c.n}`.trim();
+      d.value = msg + (d.value ? ("\n\n" + d.value) : "");
+      location.hash = "#quote";
+      d.focus();
+    });
+
+    // Text estimate button (opens SMS with message)
+    const textEstimate = document.getElementById('textEstimate');
+    textEstimate.addEventListener('click', (e) => {
+      const c = calc();
+      const msg =
+`Hi! Quick ballpark from your site:
+Type: ${c.t}, Size: ${c.s}, Condition: ${c.p}, Timing: ${c.ti}
+Range: $${fmt(c.lo)}–$${fmt(c.hi)}
+Notes: ${c.n}
+Can I get a free estimate?`;
+      textEstimate.href = "sms:+15307568188&body=" + encodeURIComponent(msg);
+    });
+
+    // Quote form: Email & SMS actions (works on GitHub Pages)
+    const emailBtn = document.getElementById('emailBtn');
+    const smsBtn = document.getElementById('smsBtn');
+
+    function buildLeadMessage(){
+      const n = document.getElementById('name').value || "";
+      const ph = document.getElementById('phone').value || "";
+      const em = document.getElementById('email').value || "";
+      const addr = document.getElementById('address').value || "";
+      const hs = document.getElementById('howSoon').value || "";
+      const det = document.getElementById('details').value || "";
+      const subject = `Estimate request: ${n || "New lead"} (${addr || "No city"})`;
+      const body =
+`Name: ${n}
+Phone: ${ph}
+Email: ${em}
+Address/City: ${addr}
+When: ${hs}
+
+Details:
+${det}`.trim();
+      return {subject, body};
+    }
+
+    emailBtn.addEventListener('click', () => {
+      const m = buildLeadMessage();
+      // Sends via user's mail app
+      window.location.href = `mailto:brian@wildwestpainting.net?subject=${encodeURIComponent(m.subject)}&body=${encodeURIComponent(m.body)}`;
+    });
+
+    smsBtn.addEventListener('click', () => {
+      const m = buildLeadMessage();
+      smsBtn.href = "sms:+15307568188&body=" + encodeURIComponent(m.body);
+    });
+  </script>
 </body>
 </html>
